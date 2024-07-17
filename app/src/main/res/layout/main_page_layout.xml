@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D3D3D3">
+
+
+    <ImageView
+        android:id="@+id/IV_Avatar"
+        android:layout_width="78dp"
+        android:layout_height="93dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_netology_original" />
+
+    <ImageView
+        android:layout_width="27dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/ic_baseline_more_vert_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="published, IV_Avatar" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="netologyText" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier_under_stats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="eye" />
+
+    <TextView
+        android:id="@+id/author"
+        android:layout_width="273dp"
+        android:layout_height="20dp"
+        android:ellipsize="end"
+        android:lines="1"
+        android:maxLines="1"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/IV_Avatar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/IV_Avatar"
+        app:layout_constraintTop_toTopOf="@+id/IV_Avatar"
+        app:layout_constraintVertical_bias="0.232"
+        tools:text="Нетология. Университет интернет-профессий будущего" />
+
+    <TextView
+        android:id="@+id/published"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:lines="1"
+        app:layout_constraintBottom_toBottomOf="@+id/IV_Avatar"
+        app:layout_constraintStart_toEndOf="@+id/IV_Avatar"
+        app:layout_constraintTop_toBottomOf="@+id/author"
+        app:layout_constraintVertical_bias="0.363"
+        tools:text="@sample/posts.json/data/published" />
+
+    <TextView
+        android:id="@+id/date_published"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:lines="1"
+        app:layout_constraintBottom_toBottomOf="@+id/IV_Avatar"
+        app:layout_constraintStart_toEndOf="@+id/IV_Avatar"
+        app:layout_constraintTop_toBottomOf="@+id/author"
+        app:layout_constraintVertical_bias="0.363"
+        tools:text="@sample/posts.json/data/published" />
+
+
+    <TextView
+        android:id="@+id/netologyText"
+        android:layout_width="396dp"
+        android:layout_height="165dp"
+        android:text="Привет, это новая Нетология! Когда-то Нетология &#xA;начиналась с интенсивов по онлайн-маркетингу. Затем &#xA;появились курсы по дизайну, разработке, аналитике &#xA;и управлению. Мы растём сами и помогаем расти &#xA;студентам: от новичков до уверенных профессионалов. &#xA;Но самое важное остаётся с нами: мы верим, что в &#xA;каждом уже есть сила, которая заставляет хотеть, &#xA;больше, целиться выше, бежать быстрее. Наша миссия &#xA;— помочь встать на путь роста и начать цепочку перемен - http://netolo.gy/fyb"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="120dp" />
+
+    <ImageView
+        android:id="@+id/likes"
+        android:layout_width="27dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="304dp"
+        android:layout_marginEnd="372dp"
+        android:src="@drawable/baseline_favorite_border_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="38dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="37dp"
+        app:layout_constraintBottom_toBottomOf="@+id/likes"
+        app:layout_constraintStart_toStartOf="@+id/likes"
+        tools:text="10"
+        android:gravity="center_vertical"
+        android:textSize="7pt"/>
+
+    <TextView
+        android:layout_width="43dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        tools:text="5"
+        android:gravity="center_vertical"
+        android:textSize="7pt"/>
+
+    <TextView
+        android:layout_width="48dp"
+        android:layout_height="34dp"
+        android:gravity= "center_vertical"
+        tools:layout_editor_absoluteX="347dp"
+        tools:layout_editor_absoluteY="304dp"
+        tools:text="500"
+        android:textSize="7pt"/>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="27dp"
+        android:layout_height="35dp"
+        android:src="@drawable/baseline_share_24"
+        tools:layout_editor_absoluteX="94dp"
+        tools:layout_editor_absoluteY="304dp" />
+
+    <ImageView
+        android:id="@+id/eye"
+        android:layout_width="27dp"
+        android:layout_height="35dp"
+        android:src="@drawable/baseline_remove_red_eye_24"
+        tools:layout_editor_absoluteX="311dp"
+        tools:layout_editor_absoluteY="304dp" />
+
+    <View
+        android:id="@+id/red_line"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="@android:color/holo_red_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="347dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
