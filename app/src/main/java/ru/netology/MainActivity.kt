@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
 
         post = Post(
             likeCount = 999_999,
-            shareCount = 999,
+            shareCount = 9_999_999,
             viewCount = 500
         )
 
@@ -66,7 +66,6 @@ class MainActivity : AppCompatActivity() {
                     String.format("%.1fK", formatted)
                 }
             }
-
             else -> {
                 val millions = count / 1_000_000
                 val remainder = count % 1_000_000
@@ -80,4 +79,4 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-}
+    }
