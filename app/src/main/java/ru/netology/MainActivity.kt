@@ -1,9 +1,12 @@
 package ru.netology
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import ru.netology.databinding.MainPageLayoutBinding
+
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: MainPageLayoutBinding
@@ -15,9 +18,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         post = Post(
-            likeCount = 999_999,
+            id = 0,
+            author = "Нетология. Университет интернет-профессий будущего",
+            content = "Привет, это новая Нетология! Когда-то Нетология начиналась с интенсивов по онлайн-маркетингу. Затем появились курсы по дизайну, разработке, аналитике и управлению. Мы растём сами и помогаем расти студентам: от новичков до уверенных профессионалов. Но самое важное остаётся с нами: мы верим, что в каждом уже есть сила, которая заставляет хотеть больше, целиться выше, бежать быстрее. Наша миссия — помочь встать на путь роста и начать цепочку перемен — http://netolo.gy/fyb",
+            published = "21 мая в 18:36",
+            likeCount = 129999,
             shareCount = 9_999_999,
-            viewCount = 500
+            viewCount = 9999
         )
 
         updateUI()
@@ -53,30 +60,26 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("DefaultLocale")
     private fun formatCount(count: Int): String {
         return when {
             count < 1000 -> count.toString()
             count < 1_000_000 -> {
                 val thousands = count / 1000
-                val remain = count % 1000
-                if (thousands < 10 && remain < 100) {
+                val remainder = count % 1000
+                if (thousands < 10 && remainder < 100) {
                     "${thousands}K"
                 } else {
                     val formatted = (count / 100).toDouble() / 10
                     String.format("%.1fK", formatted)
                 }
             }
+
             else -> {
                 val millions = count / 1_000_000
-                val remainder = count % 1_000_000
-                when {
-                    remainder == 0 -> "${millions}M"
-                    else -> {
-                        val formatted = (count / 100_000).toDouble() / 10
-                        String.format("%.1fM", formatted)
-                    }
-                }
+                val remainder = (count % 1_000_000) / 100_000
+                String.format("%d.%dM", millions, remainder)
             }
         }
     }
-    }
+}
