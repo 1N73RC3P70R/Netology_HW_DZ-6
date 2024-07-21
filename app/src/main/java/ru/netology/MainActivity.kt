@@ -64,18 +64,18 @@ class MainActivity : AppCompatActivity() {
     private fun formatCount(count: Int): String {
         return when {
             count < 1000 -> count.toString()
-            count < 10_000 -> {
-                val thousands = count / 1000
-                val remainder = count % 1000
-                if (remainder == 0) "${thousands}K" else String.format("%.1fK", count / 1000.0)
+            count < 10000 -> {
+                if (count < 1100) "${count / 1000}K"
+                else String.format("%.1fK", count / 1000.0)
             }
+
             count < 1_000_000 -> "${count / 1000}K"
-            count < 9_950_000 -> {
+            count < 10_000_000 -> {
                 val millions = count / 1_000_000
-                val remainder = count % 1_000_000
-                if (remainder == 0) "${millions}M" else String.format("%.1fM", count / 1_000_000.0)
+                val remainder = (count % 1_000_000) / 100_000
+                if (remainder == 0) "${millions}M" else "$millions.${remainder}M"
             }
-            count < 10_000_000 -> "9.9M"
+
             else -> "${count / 1_000_000}M"
         }
     }
