@@ -13,7 +13,7 @@
         android:layout_height="48dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        />
+        app:srcCompat="@drawable/ic_netology_original" />
 
     <TextView
         android:id="@+id/author"
